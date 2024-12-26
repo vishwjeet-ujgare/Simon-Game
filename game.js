@@ -14,6 +14,16 @@ $(document).keypress(function (event) {
     }
 });
 
+
+// Start game For mobile users via the Start button
+$("#start-btn").click(function () {
+    if (!isGameHasStarted) {
+        $('h1').text("Level " + level);
+        nextSequence();
+        isGameHasStarted = true;
+    }
+});
+
 function nextSequence() {
     userClickedPattern = [];
     level += 1;
